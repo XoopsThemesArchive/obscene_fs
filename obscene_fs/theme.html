@@ -1,0 +1,118 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="<{$xoops_langcode}>" lang="<{$xoops_langcode}>">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1" />
+<meta http-equiv="content-language" content="<{$xoops_langcode}>" />
+<meta name="robots" content="<{$xoops_meta_robots}>" />
+<meta name="Keywords" content="<{$xoops_meta_keywords}>" />
+<meta name="Description" content="<{$xoops_meta_description}>" />
+<meta name="rating" content="<{$xoops_meta_rating}>" />
+<meta name="author" content="<{$xoops_meta_author}>" />
+<meta name="copyright" content="<{$xoops_meta_copyright}>" />
+<meta name="generator" content="XOOPS" />
+<title><{$xoops_sitename}>-<{$xoops_pagetitle}></title>
+<link href="<{$xoops_url}>/favicon.ico" rel="SHORTCUT ICON" />
+<link rel="stylesheet" type="text/css" media="screen" href="<{$xoops_url}>/xoops.css" />
+<link rel="stylesheet" type="text/css" media="screen" href="<{$xoops_themecss}>" />
+<!-- RMV: added module header -->
+<script language="JavaScript" type="text/javascript">
+<!--
+function MM_preloadImages() { //v3.0
+  var d=document; if(d.images){ if(!d.MM_p) d.MM_p=new Array();
+    var i,j=d.MM_p.length,a=MM_preloadImages.arguments; for(i=0; i<a.length; i++)
+    if (a[i].indexOf("#")!=0){ d.MM_p[j]=new Image; d.MM_p[j++].src=a[i];}}
+}
+//-->
+</script>
+<{$xoops_module_header}>
+<script type="text/javascript">
+<!--
+<{$xoops_js}>
+//-->
+</script>
+</head>
+<body onload="MM_preloadImages('<{$xoops_imageurl}>/images/star.gif','<{$xoops_imageurl}>/images/obNav.jpg','<{$xoops_imageurl}>/images/obNav_over.jpg')"> 
+<div align="center" id="obCenter">
+  <table align="center" cellspacing="0" id="obLayout">  
+    <tr> 
+      <td id="obR1" ><table cellspacing="0"> 
+          <tr> 
+            <td>&nbsp;</td> 
+            <td id="obLogin" ><{if $xoops_isuser}><a href="<{$xoops_url}>/user.php?op=logout">logout?</a> / <a href="<{$xoops_url}>/user.php"><{$xoops_uname}>&nbsp;</a><{else}> 
+              <form action="<{$xoops_url}>/user.php" method="post" name="form1" id="form1"> 
+                <img src="<{$xoops_imageurl}>/images/user.gif" alt="user" align="top" /> 
+                <input type="text" name="uname" value="<{$block.unamevalue}>" /> 
+                <img src="<{$xoops_imageurl}>/images/pass.gif" alt="pass" align="top" /> 
+                <input type="password" name="pass" /> 
+                <input type="hidden" name="op" value="login" /> 
+&nbsp; 
+                <input value="login" name="login" type="image" src="<{$xoops_imageurl}>/images/okbut.gif" align="top" /> 
+&nbsp; 
+              </form> 
+<{/if}></td> 
+          </tr> 
+        </table></td> 
+    </tr> 
+    <tr> 
+      <td id="obHead" ><table cellspacing="0"> 
+          <tr> 
+            <td width="287"><img src="<{$xoops_imageurl}>/images/logo.gif" alt="<{$xoops_sitename}>" width="287" height="98" /></td> 
+            <td><div id="obBanner"></div></td> 
+          </tr> 
+        </table></td> 
+    </tr> 
+    <tr> 
+      <td><table id="obNav" cellspacing="0"> 
+          <tr> 
+            <td width="300" ><a href="<{$xoops_url}>/">HOME</a></td> 
+            <td width="300" ><a href="<{$xoops_url}>/modules/mydownloads/">DOWNLOADS</a></td> 
+            <td width="300" ><a href="#">THEMES</a></td> 
+            <td width="300" ><a href="<{$xoops_url}>/modules/newbb/">FORUMS</a></td> 
+            <td width="300" ><a href="<{$xoops_url}>/modules/mylinks/">LINKS</a></td> 
+            <td width="300" ><a href="<{$xoops_url}>/modules/contact/">CONTACT</a></td> 
+          </tr> 
+        </table></td> 
+    </tr> 
+    <tr> 
+      <td><table cellspacing="0"> 
+          <tr> 
+            <td rowspan="2" id="leftcolumn" ><{foreach item=block from=$xoops_lblocks}> <{include file="obscene/obblock.html"}> <{/foreach}></td> 
+            <td id="centercolumn" ><{if $xoops_showcblock == 1}> 
+              <table cellspacing="0"> 
+                <tr> 
+                  <td id="centerCcolumn" colspan="2"> <!-- Start center-center blocks loop --> 
+<{foreach item=block from=$xoops_ccblocks}> <{include file="obscene/obblock_c.html"}> <{/foreach}> 
+                    <!-- End center-center blocks loop --> </td> 
+                </tr> 
+                <tr> 
+                  <td id="centerLcolumn"> <!-- Start center-left blocks loop --> 
+<{foreach item=block from=$xoops_clblocks}> <{include file="obscene/obblock_c.html"}> <{/foreach}> 
+                    <!-- End center-left blocks loop --> </td> 
+                  <td id="centerRcolumn"> <!-- Start center-right blocks loop --> 
+<{foreach item=block from=$xoops_crblocks}> <{include file="obscene/obblock_c.html"}> <{/foreach}> 
+                    <!-- End center-right blocks loop --> </td> 
+                </tr> 
+              </table> 
+<{/if}> 
+              <!-- End display center blocks --> 
+              <div id="content"> <{$xoops_contents}></div> 
+              <br /> 
+              <br /> 
+            <br /> </td> 
+<{if $xoops_showrblock == 1}> 
+            <td rowspan="2" id="rightcolumn" ><{foreach item=block from=$xoops_rblocks}> <{include file="obscene/obblock.html"}> <{/foreach}></td> 
+<{/if}> </tr> 
+          <tr> 
+            <td id="footerbar" ><a href="http://astonthemes.com" target="_blank"><img src="<{$xoops_imageurl}>/images/aston.gif" alt="astonstreet themes" width="180" height="31" border="0" /></a><br /> 
+              <br /> 
+<{$xoops_footer}></td> 
+          </tr> 
+        </table></td> 
+    </tr> 
+    <tr> 
+      <td id="obFooter" >&nbsp;</td> 
+    </tr> 
+  </table> 
+</div> 
+</body>
+</html>
